@@ -1,3 +1,5 @@
-const HELLO_WORLD = 'Hello world';
+import React from "react";
+import ReactDOM from "react-dom";
+import App from './components/App.jsx';
 
-console.log(HELLO_WORLD);
+ReactDOM.render(<App />, document.getElementById("root"));

@@ -1,48 +1,49 @@
 ### Шаги
 
 * ####Создание папок проекта
-```
-mkdir react-boilerplate
-cd react-boilerplate
-mkdir -p src/components src/styles
-```
+    ```
+    mkdir react-boilerplate
+    cd react-boilerplate
+    mkdir -p src/components src/styles
+    ```
 
 * ####Инициализация git и создание `.gitignore`
-```
-git init
-```
+    ```
+    git init
+    ```
 
 * ####Инициализация проекта
-```
-yarn init
-```
+    ```
+    yarn init
+    ```
 
 * ####Добавление webpack
-```
-yarn add webpack webpack-cli -D
-```
+    ```
+    yarn add webpack webpack-cli -D
+    ```
 
 * ####Добавление react
-```
-yarn add react react-dom -D
-```
+    ```
+    yarn add react react-dom -D
+    ```
 
 * ####Добавление babel
-```
-yarn add @babel/core babel-loader @babel/preset-env @babel/preset-react -D
-```
-babel-core: Преобразует код ES6 в ES5.  
-babel-loader: Помощник Webpack для транспайлинга кода, задает пресеты.  
-babel-preset-env: Пресет, который помогает babel конвертировать код ES6, ES7 и ES8 в код ES5.  
-babel-preset-react: Пресет, преобразующий JSX в JavaScript.  
+    ```
+    yarn add @babel/core babel-loader @babel/preset-env @babel/preset-react -D
+    ```
+    * babel-core: Преобразует код ES6 в ES5.  
+    * babel-loader: Помощник Webpack для транспайлинга кода, задает пресеты.  
+    * babel-preset-env: Пресет, который помогает babel конвертировать код ES6, ES7 и ES8 в код ES5.  
+    * babel-preset-react: Пресет, преобразующий JSX в JavaScript.  
 
 
 * ####Добавление index файлов
 
 * ####Добавление webpack loaders  
-Нужно помнить, что вебпак выполняет лоадеры справа налево
+    Нужно помнить, что вебпак выполняет лоадеры справа налево
 
 * ####Добавление настроек babel  
     * `@babel/preset-env`: Транспиляция ES6/ES7/ES8 => ES5.
     * `@babel/preset-react`: Транспиляция JSX => ES5.
-    
+
+* ####Добавление jsx-файла
