@@ -3,6 +3,10 @@
   "version": "1.0.0",
   "description": "learning project",
   "main": "index.js",
+  "scripts": {
+    "build": "webpack --mode=production",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
   "repository": "https://github.com/Soheevich/react-boilerplate.git",
   "author": "Andrei Filyaev <soheevich@gmail.com>",
   "license": "MIT",
