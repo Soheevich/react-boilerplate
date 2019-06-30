@@ -1,11 +1,10 @@
 import React, { Component } from "react";
-
-import '../styles/App.css';
+import styles from "./App.less";
 
 class App extends Component {
 	render() {
 		return (
-			<h1 className="hello-world">Hello World!</h1>
+			<h1 className={styles.helloWorld}>Hello World!</h1>
 		);
 	}
 }

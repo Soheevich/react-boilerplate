@@ -23,8 +23,29 @@ module.exports = {
 			{
 				test: /\.css$/,
 				use: ["style-loader", "css-loader"],
+			},
+			{
+				test: /\.less$/,
+				exclude: /node_modules/,
+				rules: [
+					{
+						use: [
+							{loader: "style-loader"},
+							{
+								loader: "css-loader",
+								options: {
+									modules: true
+								}
+							},
+							"less-loader",
+						],
+					},
+				],
 			}
 		]
+	},
+	resolve: {
+		extensions: ['.ts', '.tsx', '.js', '.jsx']
 	},
 	plugins: [
 		new HtmlWebpackPlugin({
