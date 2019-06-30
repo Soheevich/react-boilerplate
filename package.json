@@ -7,6 +7,10 @@
   "author": "Andrei Filyaev <soheevich@gmail.com>",
   "license": "MIT",
   "devDependencies": {
+    "@babel/core": "^7.4.5",
+    "@babel/preset-env": "^7.4.5",
+    "@babel/preset-react": "^7.0.0",
+    "babel-loader": "^8.0.6",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "webpack": "^4.35.0",
