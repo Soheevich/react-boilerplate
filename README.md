@@ -1,33 +1,33 @@
 ### Шаги
 
-* Создание папок проекта
+* ####Создание папок проекта
 ```
 mkdir react-boilerplate
 cd react-boilerplate
 mkdir -p src/components src/styles
 ```
 
-* Инициализация git и создание `.gitignore`
+* ####Инициализация git и создание `.gitignore`
 ```
 git init
 ```
 
-* Инициализация проекта
+* ####Инициализация проекта
 ```
 yarn init
 ```
 
-* Добавление webpack
+* ####Добавление webpack
 ```
 yarn add webpack webpack-cli -D
 ```
 
-* Добавление react
+* ####Добавление react
 ```
 yarn add react react-dom -D
 ```
 
-* Добавление babel
+* ####Добавление babel
 ```
 yarn add @babel/core babel-loader @babel/preset-env @babel/preset-react -D
 ```
@@ -37,7 +37,12 @@ babel-preset-env: Пресет, который помогает babel конве
 babel-preset-react: Пресет, преобразующий JSX в JavaScript.  
 
 
-* Добавление index файлов
+* ####Добавление index файлов
 
-* Добавление webpack loaders  
+* ####Добавление webpack loaders  
 Нужно помнить, что вебпак выполняет лоадеры справа налево
+
+* ####Добавление настроек babel  
+    * `@babel/preset-env`: Транспиляция ES6/ES7/ES8 => ES5.
+    * `@babel/preset-react`: Транспиляция JSX => ES5.
+    
