@@ -1,7 +1,5 @@
 ### Шаги
 
-Выполнены шаги
-
 * Создание папок проекта
 ```
 mkdir react-boilerplate
@@ -21,5 +19,5 @@ yarn init
 
 * Добавление webpack
 ```
-yarn add webpack -D
+yarn add webpack webpack-cli -D
 ```
