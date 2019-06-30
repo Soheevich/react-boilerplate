@@ -21,3 +21,8 @@ yarn init
 ```
 yarn add webpack webpack-cli -D
 ```
+
+* Добавление react
+```
+yarn add react react-dom -D
+```
