@@ -1,0 +1,9 @@
+{
+  "name": "react-boilerplate",
+  "version": "1.0.0",
+  "description": "learning project",
+  "main": "index.js",
+  "repository": "https://github.com/Soheevich/react-boilerplate.git",
+  "author": "Andrei Filyaev <soheevich@gmail.com>",
+  "license": "MIT"
+}
