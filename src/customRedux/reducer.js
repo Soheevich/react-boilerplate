@@ -1,4 +1,4 @@
-function updateState(state, action) {
+function reducer(state, action) {
 	if (action.type === "INCREMENT") {
 		return {count: state.count + action.amount};
 	} else if (action.type === "DECREMENT") {
@@ -8,8 +8,8 @@ function updateState(state, action) {
 	}
 }
 
-function createStore(updateState, state) {
-	let _updateState = updateState;
+function createStore(reducer, state) {
+	let _reducer = reducer;
 	let _state = state;
 	let _callbacks = [];
 
@@ -17,8 +17,8 @@ function createStore(updateState, state) {
 		return _state;
 	}
 
-	function update(action) {
-		_state = _updateState(_state, action);
+	function dispatch(action) {
+		_state = _reducer(_state, action);
 		_callbacks.forEach(callback => callback());
 	}
 
@@ -27,12 +27,12 @@ function createStore(updateState, state) {
 		return () => _callbacks = _callbacks.filter(cb => cb !== callback);
 	}
 
-	return {getState, update, subscribe};
+	return {getState, dispatch, subscribe};
 }
 
 const initialState = {count: 0};
 
-const store = createStore(updateState, initialState);
+const store = createStore(reducer, initialState);
 
 const incrementAction = {type: "INCREMENT", amount: 5};
 const decrementAction = {type: "DECREMENT", amount: 3};
@@ -40,7 +40,7 @@ const decrementAction = {type: "DECREMENT", amount: 3};
 const unsubscribe = store.subscribe(() => console.log("State changed one", store.getState().count));
 store.subscribe(() => console.log("State changed two", store.getState().count));
 
-store.update(incrementAction);
+store.dispatch(incrementAction);
 unsubscribe();
-store.update(decrementAction);
-store.update({});
+store.dispatch(decrementAction);
+store.dispatch({});
