@@ -11,6 +11,7 @@ function updateState(state, action) {
 function createStore(updateState, state) {
 	let _updateState = updateState;
 	let _state = state;
+	let _callbacks = [];
 
 	function getState() {
 		return _state;
@@ -18,9 +19,15 @@ function createStore(updateState, state) {
 
 	function update(action) {
 		_state = _updateState(_state, action);
+		_callbacks.forEach(callback => callback());
 	}
 
-	return {getState, update};
+	function subscribe(callback) {
+		_callbacks.push(callback);
+		return () => _callbacks = _callbacks.filter(cb => cb !== callback);
+	}
+
+	return {getState, update, subscribe};
 }
 
 const store = createStore(updateState, 0);
@@ -28,11 +35,10 @@ const store = createStore(updateState, 0);
 const incrementAction = {type: "INCREMENT", amount: 5};
 const decrementAction = {type: "DECREMENT", amount: 3};
 
+const unsubscribe = store.subscribe(() => console.log("State changed one", store.getState()));
+store.subscribe(() => console.log("State changed two", store.getState()));
+
 store.update(incrementAction);
-console.log(store.getState());
-
+unsubscribe();
 store.update(decrementAction);
-console.log(store.getState());
-
 store.update({});
-console.log(store.getState());
