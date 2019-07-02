@@ -10,11 +10,14 @@ function updateState(state, action) {
 	}
 }
 
-state = updateState(state, {type: "INCREMENT", amount: 5});
+const incrementAction = {type: "INCREMENT", amount: 5};
+const decrementAction = {type: "DECREMENT", amount: 3};
+
+state = updateState(state, incrementAction);
 console.log(state);
 
-state = updateState(state, {type: "DECREMENT", amount: 3});
+state = updateState(state, decrementAction);
 console.log(state);
 
-state = updateState(state, {type: "NOTHING"});
+state = updateState(state, {});
 console.log(state);
